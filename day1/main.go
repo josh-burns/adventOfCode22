@@ -34,5 +34,14 @@ func main() {
 	}
 
 	sort.Ints(caloriesPerElf)
+	// part 1:
 	fmt.Println(caloriesPerElf[len(caloriesPerElf)-1])
+
+	// part 2:
+	top3 := caloriesPerElf[len(caloriesPerElf)-1] +
+		caloriesPerElf[len(caloriesPerElf)-2] +
+		caloriesPerElf[len(caloriesPerElf)-3]
+
+	fmt.Println(top3)
+
 }
