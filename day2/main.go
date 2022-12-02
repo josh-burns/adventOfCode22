@@ -49,9 +49,7 @@ func part1(input string ) int{
 	legend["B"] = "Y"
 	legend["C"] = "Z"
 
-	lenMinusOne := (len(rounds))-1
-
-	for i := 0; i < lenMinusOne; i++{
+	for i := 0; i < len(rounds); i++{
 		splitChoices := strings.Split(rounds[i], " ")
 		myChoice := splitChoices[1]
 		pointsTally += pointsLegend[myChoice]
@@ -82,9 +80,8 @@ func part2(input string) int{
 
 	rounds := strings.Split(input, "\n")
 
-	lenMinusOne := (len(rounds))
 
-	for i := 0; i < lenMinusOne; i++{
+	for i := 0; i < len(rounds); i++{
 		splitChoices := strings.Split(rounds[i], " ")
 		joined := strings.Join(splitChoices, "")
 

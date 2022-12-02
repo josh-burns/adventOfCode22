@@ -12,22 +12,22 @@ type testInput struct{
 	input string
 }
 
-// func TestPart1(t *testing.T){
-// 	test1 := testInput{
-// 		want: 15,
-// 		input: `A Y
-// B X
-// C Z`,
-// 	}
+func TestPart1(t *testing.T){
+	test1 := testInput{
+		want: 15,
+		input: `A Y
+B X
+C Z`,
+	}
 
-// 	ans := part1(test1.input)
+	ans := part1(test1.input)
 
-// 	if ans != test1.want { 
-// 		t.Error("wanted: ", test1.want, "got: ", ans)
-// 	}
+	if ans != test1.want { 
+		t.Error("wanted: ", test1.want, "got: ", ans)
+	}
 
 
-// }
+}
 
 
 func TestPart2(t *testing.T){
