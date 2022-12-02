@@ -4,9 +4,6 @@ import (
 	"testing"
 )
 
-
-
-
 type testInput struct{
 	want int
 	input string
@@ -25,8 +22,6 @@ C Z`,
 	if ans != test1.want { 
 		t.Error("wanted: ", test1.want, "got: ", ans)
 	}
-
-
 }
 
 

@@ -7,8 +7,6 @@ import (
 	"strings"
 )
 
-
-
 func main(){
 
 	input, err := os.ReadFile("input.txt") // just pass the file name
