@@ -27,17 +27,21 @@ CrZsJsPPZsGzwwsLwLmpwMDw`,
 	}
 }
 
-// func TestPart2(t *testing.T){
-// 	test2 := testInput{
-// 		want: 112,
-// 		input: `
-//                       112
-//                        `,
-// 	}
+func TestPart2(t *testing.T){
+	test2 := testInput{
+		want: 70,
+		input: `vJrwpWtwJgWrhcsFMMfFFhFp
+jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
+PmmdzqPrVvPwwTWBwg
+wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
+ttgJtRGJQctTZtZT
+CrZsJsPPZsGzwwsLwLmpwMDw
+`,
+	}
 
-// 	ans := part2(test2.input)
+	ans := part2(test2.input)
 
-// 	if ans != test2.want {
-// 		t.Error("wanted: ", test2.want, "got: ", ans)
-// 	}
-// }
+	if ans != test2.want {
+		t.Error("wanted: ", test2.want, "got: ", ans)
+	}
+}

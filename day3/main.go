@@ -67,7 +67,79 @@ func part1(input string ) int{
 	}
 	return priorities
 }
+func contains(s []string, str string) bool {
+	for _, v := range s {
+		if v == str {
+			return true
+		}
+	}
+
+	return false
+}
 
 func part2(input string) int{
-	return 112
+	splitLines := strings.Split(input, "\n" )
+
+	var dupes []string
+	n := 3
+
+	for a := 0; a < len(splitLines); a += n {
+		if n > len(splitLines)-a {
+			n = len(splitLines)-a
+		}
+		group := splitLines[a : a+n]
+
+		var checkedLetters []string
+
+		for b := range group[0]{
+			letterToCheck := string(group[0][b])
+			if(contains(checkedLetters, letterToCheck)){
+				fmt.Println("DUPE")
+			}else{
+
+				var foundInSecondBag bool
+				var foundInThirdBag bool
+
+				for c := range group[1] {
+					letterToBeChecked := string(group[1][c])
+					if letterToCheck == letterToBeChecked {
+						foundInSecondBag = true
+					}
+				}
+
+				if foundInSecondBag == true {
+					// fmt.Println("looking for ", letterToCheck, "in third bag!")
+					for d := range group[2] {
+						letterToBeChecked := string(group[2][d])
+						if letterToCheck == letterToBeChecked {
+							foundInThirdBag = true
+						}
+					}
+				}
+
+				if foundInThirdBag == true {
+					dupes = append(dupes, letterToCheck)
+				}
+				checkedLetters = append(checkedLetters, letterToCheck)
+			}
+		}
+	}
+
+
+
+	firstElRemoved := dupes[0:len(dupes)]
+	fmt.Println(dupes)
+	priorities := 0
+	for c := range firstElRemoved {
+		runeArray := []rune(firstElRemoved[c])
+		asciiValue := runeArray[0]
+		if asciiValue > 96 {
+			asciiValue -= 96
+			priorities += int(asciiValue)
+		}else{
+			asciiValue -= 38
+			priorities += int(asciiValue)
+		}
+	}
+	return priorities
 }
