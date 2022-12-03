@@ -67,13 +67,13 @@ func part1(input string ) int{
 	}
 	return priorities
 }
+
 func contains(s []string, str string) bool {
 	for _, v := range s {
 		if v == str {
 			return true
 		}
 	}
-
 	return false
 }
 
@@ -108,7 +108,6 @@ func part2(input string) int{
 				}
 
 				if foundInSecondBag == true {
-					// fmt.Println("looking for ", letterToCheck, "in third bag!")
 					for d := range group[2] {
 						letterToBeChecked := string(group[2][d])
 						if letterToCheck == letterToBeChecked {
