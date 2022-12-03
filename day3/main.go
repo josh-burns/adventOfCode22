@@ -28,6 +28,31 @@ func main(){
 }
 
 
+func contains(s []string, str string) bool {
+	for _, v := range s {
+		if v == str {
+			return true
+		}
+	}
+	return false
+}
+
+func computePriority(letters []string)int{
+	priorities := 0
+	for c := range letters {
+		runeArray := []rune(letters[c])
+		asciiValue := runeArray[0]
+		if asciiValue > 96 {
+			asciiValue -= 96
+			priorities += int(asciiValue)
+		}else{
+			asciiValue -= 38
+			priorities += int(asciiValue)
+		}
+	}
+	return priorities
+}
+
 func part1(input string ) int{
 	splitLines := strings.Split(input, "\n" )
 
@@ -52,30 +77,10 @@ func part1(input string ) int{
 		}
 	}
 
-
-	priorities := 0
-	for c := range dupes {
-		runeArray := []rune(dupes[c])
-		asciiValue := runeArray[0]
-		if asciiValue > 96 {
-			asciiValue -= 96
-			priorities += int(asciiValue)
-		}else{
-			asciiValue -= 38
-			priorities += int(asciiValue)
-		}
-	}
+	priorities := computePriority(dupes)
 	return priorities
 }
 
-func contains(s []string, str string) bool {
-	for _, v := range s {
-		if v == str {
-			return true
-		}
-	}
-	return false
-}
 
 func part2(input string) int{
 	splitLines := strings.Split(input, "\n" )
@@ -93,10 +98,7 @@ func part2(input string) int{
 
 		for b := range group[0]{
 			letterToCheck := string(group[0][b])
-			if(contains(checkedLetters, letterToCheck)){
-				fmt.Println("DUPE")
-			}else{
-
+			if(contains(checkedLetters, letterToCheck) == false){
 				var foundInSecondBag bool
 				var foundInThirdBag bool
 
@@ -124,21 +126,6 @@ func part2(input string) int{
 		}
 	}
 
-
-
-	firstElRemoved := dupes[0:len(dupes)]
-	fmt.Println(dupes)
-	priorities := 0
-	for c := range firstElRemoved {
-		runeArray := []rune(firstElRemoved[c])
-		asciiValue := runeArray[0]
-		if asciiValue > 96 {
-			asciiValue -= 96
-			priorities += int(asciiValue)
-		}else{
-			asciiValue -= 38
-			priorities += int(asciiValue)
-		}
-	}
+	priorities := computePriority(dupes)
 	return priorities
 }
