@@ -36,6 +36,14 @@ func convStringArrayToInt(stringArray []string) []int {
 	return intArray
 }
 
+func expandSections(intSections []int) []int {
+	var fullSections []int
+	for b := intSections[0]; b < intSections[1]+1; b++ {
+		fullSections = append(fullSections, b)
+	}
+	return fullSections
+}
+
 func part1(input string) int {
 	elfPairs := strings.Split(input, "\n")
 	elfPairs = elfPairs[:len(elfPairs)-1]
@@ -46,22 +54,12 @@ func part1(input string) int {
 		firstElf := splitElves[0]
 		secondElf := splitElves[1]
 
-		firstElfStringSections := strings.Split(firstElf, "-")
-		secondElfStringSections := strings.Split(secondElf, "-")
+		firstElfStringSections, secondElfStringSections := strings.Split(firstElf, "-"), strings.Split(secondElf, "-")
 
-		firstElfIntSections := convStringArrayToInt(firstElfStringSections)
-		secondElfIntSections := convStringArrayToInt(secondElfStringSections)
+		firstElfIntSections, secondElfIntSections := convStringArrayToInt(firstElfStringSections), convStringArrayToInt(secondElfStringSections)
 
-		var firstElfFullSections []int
-		var secondElfFullSections []int
-
-		for b := firstElfIntSections[0]; b < firstElfIntSections[1]+1; b++ {
-			firstElfFullSections = append(firstElfFullSections, b)
-		}
-
-		for b := secondElfIntSections[0]; b <= secondElfIntSections[1]; b++ {
-			secondElfFullSections = append(secondElfFullSections, b)
-		}
+		firstElfFullSections := expandSections(firstElfIntSections)
+		secondElfFullSections := expandSections(secondElfIntSections)
 
 		var joined []int
 		joined = append(firstElfFullSections, secondElfFullSections...)
@@ -106,23 +104,12 @@ func part2(input string) int {
 		firstElf := splitElves[0]
 		secondElf := splitElves[1]
 
-		firstElfStringSections := strings.Split(firstElf, "-")
-		secondElfStringSections := strings.Split(secondElf, "-")
+		firstElfStringSections, secondElfStringSections := strings.Split(firstElf, "-"), strings.Split(secondElf, "-")
 
-		firstElfIntSections := convStringArrayToInt(firstElfStringSections)
-		secondElfIntSections := convStringArrayToInt(secondElfStringSections)
+		firstElfIntSections, secondElfIntSections := convStringArrayToInt(firstElfStringSections), convStringArrayToInt(secondElfStringSections)
 
-		var firstElfFullSections []int
-		var secondElfFullSections []int
-
-		for b := firstElfIntSections[0]; b < firstElfIntSections[1]+1; b++ {
-			firstElfFullSections = append(firstElfFullSections, b)
-		}
-
-		for b := secondElfIntSections[0]; b <= secondElfIntSections[1]; b++ {
-			secondElfFullSections = append(secondElfFullSections, b)
-		}
-
+		firstElfFullSections := expandSections(firstElfIntSections)
+		secondElfFullSections := expandSections(secondElfIntSections)
 		var joined []int
 		joined = append(firstElfFullSections, secondElfFullSections...)
 
