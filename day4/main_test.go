@@ -28,17 +28,21 @@ func TestPart1(t *testing.T) {
 	}
 }
 
-// func TestPart2(t *testing.T){
-// 	test2 := testInput{
-// 		want: 112,
-// 		input: `
-//                       112
-//                        `,
-// 	}
+func TestPart2(t *testing.T) {
+	test2 := testInput{
+		want: 4,
+		input: `2-4,6-8
+2-3,4-5
+5-7,7-9
+2-8,3-7
+6-6,4-6
+2-6,4-8
+`,
+	}
 
-// 	ans := part2(test2.input)
+	ans := part2(test2.input)
 
-// 	if ans != test2.want {
-// 		t.Error("wanted: ", test2.want, "got: ", ans)
-// 	}
-// }
+	if ans != test2.want {
+		t.Error("wanted: ", test2.want, "got: ", ans)
+	}
+}
