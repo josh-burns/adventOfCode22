@@ -35,7 +35,6 @@ func reverse(numbers []string) []string {
 }
 
 func part1(input string) string {
-
 	splitInput := strings.Split(input, "\n\n")
 	commands := splitInput[1]
 	rawCrates := splitInput[0]
@@ -111,7 +110,6 @@ func part1(input string) string {
 }
 
 func part2(input string) string {
-
 	splitInput := strings.Split(input, "\n\n")
 	commands := splitInput[1]
 	rawCrates := splitInput[0]
@@ -167,20 +165,14 @@ func part2(input string) string {
 			stacks[from] = stacks[from][1:len(stacks[from])]
 		}
 		var newStack []string
-		// reversedItems := reverse(items)
-		// newStack = append(newStack, reversedItems...)
-		// newStack = append(newStack, stacks[to]...)
-
 		newStack = append(newStack, items...)
 		newStack = append(newStack, stacks[to]...)
-
 		stacks[to] = newStack
 	}
 
 	var arr []string
 	for f := range trimmedIndex {
 		if len(stacks[f]) > 0 {
-
 			arr = append(arr, stacks[f][0])
 		}
 	}
