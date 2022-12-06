@@ -59,8 +59,6 @@ Out:
 	for i := range inputArray {
 		if i < len(inputArray)-14 {
 			potentialMarker := input[i : i+14]
-			// fmt.Println(len(input))
-			// fmt.Println(potentialMarker)
 			notUnique := 0
 			for a := range potentialMarker {
 				for b := a + 1; b < len(potentialMarker); b++ {

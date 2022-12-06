@@ -9,7 +9,7 @@ type testInput struct {
 	input string
 }
 
-func TestPart1(t *testing.T) {
+func TestPart1test1(t *testing.T) {
 	test1 := testInput{
 		want:  7,
 		input: `mjqjpqmgbljsphdztnvjfqwrcgsmlb`,
@@ -74,10 +74,62 @@ func TestPart1test3test5(t *testing.T) {
 	}
 }
 
-func TestPart2(t *testing.T) {
+func TestPart2test1(t *testing.T) {
 	test2 := testInput{
 		want:  19,
 		input: `mjqjpqmgbljsphdztnvjfqwrcgsmlb`,
+	}
+
+	ans := part2(test2.input)
+
+	if ans != test2.want {
+		t.Error("wanted: ", test2.want, "got: ", ans)
+	}
+}
+
+func TestPart2test2(t *testing.T) {
+	test2 := testInput{
+		want:  23,
+		input: `bvwbjplbgvbhsrlpgdmjqwftvncz`,
+	}
+
+	ans := part2(test2.input)
+
+	if ans != test2.want {
+		t.Error("wanted: ", test2.want, "got: ", ans)
+	}
+}
+
+func TestPart2test3(t *testing.T) {
+	test2 := testInput{
+		want:  23,
+		input: `nppdvjthqldpwncqszvftbrmjlhg`,
+	}
+
+	ans := part2(test2.input)
+
+	if ans != test2.want {
+		t.Error("wanted: ", test2.want, "got: ", ans)
+	}
+}
+
+func TestPart2test4(t *testing.T) {
+	test2 := testInput{
+		want:  29,
+		input: `nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg`,
+	}
+
+	ans := part2(test2.input)
+
+	if ans != test2.want {
+		t.Error("wanted: ", test2.want, "got: ", ans)
+	}
+}
+
+func TestPart2test5(t *testing.T) {
+	test2 := testInput{
+		want:  26,
+		input: `zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw`,
 	}
 
 	ans := part2(test2.input)
