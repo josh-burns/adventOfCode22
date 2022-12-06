@@ -74,17 +74,15 @@ func TestPart1test3test5(t *testing.T) {
 	}
 }
 
-// func TestPart2(t *testing.T){
-// 	test2 := testInput{
-// 		want: 112,
-// 		input: `
-//                       112
-//                        `,
-// 	}
+func TestPart2(t *testing.T) {
+	test2 := testInput{
+		want:  19,
+		input: `mjqjpqmgbljsphdztnvjfqwrcgsmlb`,
+	}
 
-// 	ans := part2(test2.input)
+	ans := part2(test2.input)
 
-// 	if ans != test2.want {
-// 		t.Error("wanted: ", test2.want, "got: ", ans)
-// 	}
-// }
+	if ans != test2.want {
+		t.Error("wanted: ", test2.want, "got: ", ans)
+	}
+}
