@@ -31,17 +31,24 @@ move 1 from 1 to 2
 	}
 }
 
-// func TestPart2(t *testing.T){
-// 	test2 := testInput{
-// 		want: 112,
-// 		input: `
-//                       112
-//                        `,
-// 	}
+func TestPart2(t *testing.T){
+	test2 := testInput{
+		want: "MCD",
+		input: `    [D]    
+[N] [C]    
+[Z] [M] [P]
+ 1   2   3 
 
-// 	ans := part2(test2.input)
+move 1 from 2 to 1
+move 3 from 1 to 3
+move 2 from 2 to 1
+move 1 from 1 to 2
+`,
+	}
 
-// 	if ans != test2.want {
-// 		t.Error("wanted: ", test2.want, "got: ", ans)
-// 	}
-// }
+	ans := part2(test2.input)
+
+	if ans != test2.want {
+		t.Error("wanted: ", test2.want, "got: ", ans)
+	}
+}
