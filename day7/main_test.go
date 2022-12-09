@@ -11,7 +11,6 @@ type testInput struct{
 
 func TestPart1(t *testing.T){
 	test1 := testInput{
-<<<<<<< HEAD
 		want: 95437,
 		input: `$ cd /
 $ ls
@@ -36,12 +35,6 @@ $ ls
 8033020 d.log
 5626152 d.ext
 7214296 k`,
-=======
-		want: 112,
-		input: `
-                      112
-                       `,
->>>>>>> 5161992 (stash)
 	}
 
 	ans := part1(test1.input)
