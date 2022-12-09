@@ -4,20 +4,11 @@ import (
 	"flag"
 	"fmt"
 	"io/ioutil"
-<<<<<<< HEAD
 	"strings"
 	"unicode"
 )
 
-func main() {
-=======
-)
-
-
-
 func main(){
->>>>>>> 5161992 (stash)
-
 	var part int
 	flag.IntVar(&part, "part", 1, "part 1 or 2")
 	flag.Parse()
@@ -34,7 +25,6 @@ func main(){
 	}
 }
 
-<<<<<<< HEAD
 func part1(input string) int {
 	splitArray := strings.Split(input, "\n")
 
@@ -66,14 +56,7 @@ func part1(input string) int {
 	return 112
 }
 
-func part2(input string) int {
-=======
-
-func part1(input string ) int{
-	return 112
-}
 
 func part2(input string) int{
->>>>>>> 5161992 (stash)
 	return 112
 }
